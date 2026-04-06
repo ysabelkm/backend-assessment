@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "../../dist/wallet-service",
+    "baseUrl": "../../",
+    "paths": {
+      "@repo/proto": ["packages/proto/src/index.ts"],
+      "@repo/prisma": ["packages/prisma/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test"]
+}

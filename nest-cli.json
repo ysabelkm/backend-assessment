@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "monorepo": true,
+  "root": "apps/user-service",
+  "sourceRoot": "apps/user-service/src",
+  "compilerOptions": {
+    "tsConfigPath": "apps/user-service/tsconfig.app.json",
+    "assets": [
+      {
+        "include": "../../packages/proto/src/*.proto",
+        "outDir": "./dist/proto"
+      }
+    ]
+  },
+  "projects": {
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "../../packages/proto/src/*.proto",
+            "outDir": "./dist/proto"
+          }
+        ]
+      }
+    },
+    "wallet-service": {
+      "type": "application",
+      "root": "apps/wallet-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/wallet-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/wallet-service/tsconfig.app.json",
+        "assets": [
+          {
+            "include": "../../packages/proto/src/*.proto",
+            "outDir": "./dist/proto"
+          }
+        ]
+      }
+    }
+  }
+}
