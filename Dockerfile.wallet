@@ -18,4 +18,4 @@ RUN npm run build:wallet
 
 EXPOSE 5002
 
-CMD ["node", "dist/apps/wallet-service/main"]
+CMD ["node", "dist/apps/wallet-service/apps/wallet-service/src/main"]
