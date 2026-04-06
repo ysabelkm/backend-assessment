@@ -7,8 +7,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build:user": "nest build user-service",
-    "build:wallet": "nest build wallet-service",
+    "build:packages": "npm run build --workspace=packages/proto && npm run build --workspace=packages/prisma",
+    "build:user": "npm run build:packages && nest build user-service",
+    "build:wallet": "npm run build:packages && nest build wallet-service",
     "start:user": "nest start user-service",
     "start:wallet": "nest start wallet-service",
     "start:user:dev": "nest start user-service --watch",

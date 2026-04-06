@@ -1,5 +1,8 @@
 {
   "name": "@repo/proto",
   "version": "1.0.0",
-  "main": "src/index.ts"
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json && cp src/*.proto dist/"
+  }
 }
