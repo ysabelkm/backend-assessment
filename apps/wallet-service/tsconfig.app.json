@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "declaration": false,
-    "outDir": "../../dist/wallet-service",
+    "outDir": "../../dist/apps/wallet-service",
     "baseUrl": "../../",
     "paths": {
       "@repo/proto": ["packages/proto/src/index.ts"],
