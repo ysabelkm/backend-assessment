@@ -1,0 +1,19 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+COPY packages/proto/package.json ./packages/proto/
+COPY packages/prisma/package.json ./packages/prisma/
+COPY apps/user-service/package.json ./apps/user-service/
+
+RUN npm install
+
+COPY . .
+
+RUN npm run db:generate
+RUN npm run build:user
+
+EXPOSE 5001
+
+CMD ["node", "dist/user-service/main"]
